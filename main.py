@@ -4,7 +4,7 @@ import cv2
 import pandas as pd
 import matplotlib.pyplot as plt
 
-user_data = pd.read_csv("sample.csv",header=None).values
+user_data = pd.read_csv("./data/test.csv",header=None).values
 
 certi_path = "./template/test.jpg"
 
@@ -26,4 +26,4 @@ for name in user_data:
     text_y = int(text_y)
 
     cv2.putText(img,name,(text_x,text_y),font,font_size,font_color,4)
-    cv2.imwrite(f"./{name}.png",img)
+    cv2.imwrite(f"./out/{name}.png",img)
